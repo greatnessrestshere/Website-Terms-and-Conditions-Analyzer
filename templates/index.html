@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Website Analyzer</title>
+</head>
+<body>
+    <header>
+        Website Terms and Conditions Analyzer
+    </header>
+    <main>
+        <h1>Analyze Website Terms and Conditions</h1>
+        <form action="/analyze" method="POST">
+            <label for="url">Enter Website URL:</label>
+            <input type="url" id="url" name="url" placeholder="https://example.com/terms" required>
+            <button type="submit">Analyze</button>
+        </form>
+    </main>
+    <footer>
+        © 2024 Terms Analyzer | Built with Flask
+    </footer>
+</body>
+</html>

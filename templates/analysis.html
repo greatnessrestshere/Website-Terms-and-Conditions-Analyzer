@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Analysis Results</title>
+</head>
+<body>
+    <header>
+        Website Terms and Conditions Analyzer
+    </header>
+    <main>
+        <h1>Analysis Results</h1>
+        <form action="/generate_pdf" method="POST">
+            {% for section in sections %}
+            <h2>{{ section.title }}</h2>
+            <ul>
+                {% for content in section.content %}
+                <li>{{ content }}</li>
+                {% endfor %}
+            </ul>
+            {% endfor %}
+            <button type="submit">Download PDF</button>
+        </form>
+    </main>
+    <footer>
+        © 2024 Terms Analyzer | Built with Flask
+    </footer>
+</body>
+</html>
